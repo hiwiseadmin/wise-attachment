@@ -1,6 +1,6 @@
 {
     "name": "wiseadmin/wise-attachment",
-    "description": "ThinkPHP 6 多驱动附件管理包，支持本地、FTP、七牛云、阿里云OSS、腾讯云COS存储，集成图片处理、软删除、多态关联",
+    "description": "WiseAdmin 多驱动附件管理包 — 支持本地、FTP、七牛云、阿里云 OSS、腾讯云 COS 存储，集成图片处理、软删除与多态关联",
     "type": "library",
     "keywords": [
         "thinkphp6",
@@ -12,7 +12,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "WiseAdmin 开发团队",
+            "name": "WiseAdmin Team",
             "email": "wiseadmin@126.com"
         }
     ],
@@ -44,5 +44,19 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "homepage": "https://github.com/hiwiseadmin/wise-attachment",
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/docs",
+            "/.github",
+            "/phpunit.xml",
+            "/.gitattributes",
+            "/.gitignore",
+            "/*.md",
+            "!/README.md",
+            "/qa/"
+        ]
+    }
 }
