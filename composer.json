@@ -1,0 +1,48 @@
+{
+    "name": "wiseadmin/wise-attachment",
+    "description": "ThinkPHP 6 多驱动附件管理包，支持本地、FTP、七牛云、阿里云OSS、腾讯云COS存储，集成图片处理、软删除、多态关联",
+    "type": "library",
+    "keywords": [
+        "thinkphp6",
+        "attachment",
+        "upload",
+        "file-manager",
+        "wiseadmin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WiseAdmin 开发团队",
+            "email": "wiseadmin@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "topthink/framework": "^6.0 || ^8.0"
+    },
+    "suggest": {
+        "qiniu/php-sdk": "七牛云 Kodo 驱动所需",
+        "aliyuncs/oss-sdk-php": "阿里云 OSS 驱动所需",
+        "qcloud/cos-sdk-v5": "腾讯云 COS 驱动所需",
+        "intervention/image": "^2.0 - 增强图片处理功能，支持更多格式",
+        "wiseadmin/wise-image": "^1.0 - 增强图片处理功能，支持更多格式和水印效果"
+    },
+    "autoload": {
+        "psr-4": {
+            "wise\\attachment\\": "src/"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "wise\\attachment\\Service"
+            ],
+            "config": {
+                "wise-attachment": "config/wise-attachment.php"
+            },
+            "migrate-path": "database/migrations"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
