@@ -1,0 +1,74 @@
+{
+    "name": "wiseadmin/wise-attachment",
+    "description": "WiseAdmin 多驱动附件管理包 — 支持本地、FTP、七牛云、阿里云 OSS、腾讯云 COS 存储，内置独立命名空间的图片处理引擎（wise\\image），集成软删除与多态关联",
+    "homepage": "https://github.com/hiwiseadmin/wise-attachment",
+    "type": "library",
+    "license": "Apache-2.0",
+    "keywords": [
+        "thinkphp6",
+        "attachment",
+        "upload",
+        "file-manager",
+        "image",
+        "wiseadmin"
+    ],
+    "authors": [
+        {
+            "name": "WiseAdmin Team",
+            "email": "wiseadmin@126.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "wiseadmin/wise-support": "1.0.*"
+    },
+    "suggest": {
+        "qiniu/php-sdk": "七牛云 Kodo 驱动所需",
+        "aliyuncs/oss-sdk-php": "阿里云 OSS 驱动所需",
+        "qcloud/cos-sdk-v5": "腾讯云 COS 驱动所需",
+        "intervention/image": "^2.0 - 增强图片处理功能，支持更多格式",
+        "ext-imagick": "图片引擎的 Imagick 驱动（性能更优、格式更多）",
+        "ext-curl": "图片引擎远程抓取使用 curl（未安装时降级为 stream 实现）"
+    },
+    "autoload": {
+        "psr-4": {
+            "wise\\attachment\\": "src/attachment/",
+            "wise\\image\\": "src/image/"
+        },
+        "files": [
+            "src/image/helper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "wise\\attachment\\tests\\": "tests/",
+            "wise\\image\\tests\\": "tests/image/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "think": {
+            "services": [
+                "wise\\attachment\\AttachmentServiceProvider",
+                "wise\\image\\ImageServiceProvider"
+            ],
+            "config": {
+                "wise-attachment": "config/wise-attachment.php"
+            }
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/docs",
+            "/.github",
+            "/phpunit.xml",
+            "/.gitattributes",
+            "/.gitignore",
+            "/*.md",
+            "!/README.md",
+            "/qa/"
+        ]
+    }
+}
